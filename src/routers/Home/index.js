@@ -1,0 +1,19 @@
+export default{
+	path:'/home',
+	component:()=>import('@/views/Home'),
+	children:[
+		{
+			path:'login',
+			component:()=>import('@/components/login'),
+		},
+		{
+			path:'register',
+			component:()=>import('@/components/register'),
+		},
+		//重定向
+		{
+			path:'/home',
+			redirect:'/home/login'	
+        }
+	]
+}
